@@ -65,7 +65,7 @@ const reducer = (state, { type, value }) => {
       };
 
     case ACTION.CLEAR:
-      return {};
+      return { currentInput: 0 };
 
     case ACTION.DELETE:
       if (state.overwrite) {
@@ -140,7 +140,7 @@ const reducer = (state, { type, value }) => {
 function App() {
   const [{ currentInput, previousInput, operand }, dispatch] = useReducer(
     reducer,
-    {}
+    { currentInput: 0 }
   );
   return (
     <div className="calculator-div">
