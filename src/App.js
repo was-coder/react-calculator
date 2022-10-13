@@ -1,11 +1,12 @@
 import "./components/css/reset.css";
 import "./components/css/main.css";
+import InputButton from "./components/buttons/InputButton";
+import OperandButton from "./components/buttons/OperandButton";
+import ClearButton from "./components/buttons/ClearButton";
+import DeleteButton from "./components/buttons/DeleteButton";
+import EqualButton from "./components/buttons/EqualButton";
+
 import { useReducer } from "react";
-import InputButton from "./components/InputButton";
-import OperandButton from "./components/OperandButton";
-import ClearButton from "./components/ClearButton";
-import DeleteButton from "./components/DeleteButton";
-import EqualButton from "./components/EqualButton";
 
 export const ACTIONS = {
   CLICK_INPUT: "click-input",
@@ -52,7 +53,7 @@ const reduce = (state, { type, load }) => {
         return {
           ...state,
           currentInput: load.digit,
-          operand: false,
+          overwrite: false,
         };
       }
 
