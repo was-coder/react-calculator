@@ -41,12 +41,12 @@ const evaluate = ({ previousInput, operand, currentInput }) => {
       break;
 
     default:
-      return null;
+      return answer;
   }
   return answer.toString();
 };
 
-const reduce = (state, { type, load }) => {
+const reducer = (state, { type, load }) => {
   switch (type) {
     case ACTIONS.CLICK_INPUT:
       if (state.overwrite) {
@@ -133,26 +133,24 @@ const reduce = (state, { type, load }) => {
       };
 
     default:
-      return null;
+      return state;
   }
 };
 
 function App() {
   const [{ currentInput, previousInput, operand }, dispatch] = useReducer(
-    reduce,
+    reducer,
     {}
   );
   return (
     <div className="calculator-div">
       <div className="result">
-        <div className="previous-result">
-          {previousInput} {operand}
-        </div>
+        <div className="previous-result">{previousInput}</div>
+        <div className="operand">{operand}</div>
         <div className="current-result">{currentInput}</div>
       </div>
       <ClearButton clear="AC" dispatch={dispatch} />
       <DeleteButton del="DEL" dispatch={dispatch} />
-      {/* <OperandButton operand="+/-" dispatch={dispatch} /> */}
       <InputButton digit="1" dispatch={dispatch} />
       <InputButton digit="2" dispatch={dispatch} />
       <OperandButton operand="*" dispatch={dispatch} />

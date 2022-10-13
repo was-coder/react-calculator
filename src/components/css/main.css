@@ -19,6 +19,12 @@
   border-radius: 2px;
 }
 
+.operand {
+  color: #4682b4;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
 .input-btn {
   font-size: 15px;
   font-weight: 700;
