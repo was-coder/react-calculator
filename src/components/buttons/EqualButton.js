@@ -1,4 +1,4 @@
-import { ACTIONS } from "../../App";
+import { ACTION } from "../../App";
 
 // handling dispatch for equal button
 
@@ -7,7 +7,7 @@ export default function EqualButton({ dispatch, equals }) {
     <button
       onClick={() =>
         dispatch({
-          type: ACTIONS.EVALUATE,
+          type: ACTION.EVALUATE,
         })
       }
       className="input-btn signs equal"

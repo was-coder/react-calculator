@@ -8,7 +8,7 @@ import EqualButton from "./components/buttons/EqualButton";
 
 import { useReducer } from "react";
 
-export const ACTIONS = {
+export const ACTION = {
   CLICK_INPUT: "click-input",
   CLICK_OPERAND: "click-operand",
   CLEAR: "clear",
@@ -46,28 +46,28 @@ const evaluate = ({ previousInput, operand, currentInput }) => {
   return answer.toString();
 };
 
-const reducer = (state, { type, load }) => {
+const reducer = (state, { type, value }) => {
   switch (type) {
-    case ACTIONS.CLICK_INPUT:
+    case ACTION.CLICK_INPUT:
       if (state.overwrite) {
         return {
           ...state,
-          currentInput: load.digit,
+          currentInput: value.digit,
           overwrite: false,
         };
       }
 
-      if (load.digit === "0" && state.currentInput === "0") return state;
-      if (load.digit === "." && state.currentInput.includes(".")) return state;
+      if (value.digit === "0" && state.currentInput === "0") return state;
+      if (value.digit === "." && state.currentInput.includes(".")) return state;
       return {
         ...state,
-        currentInput: `${state.currentInput || ""}${load.digit}`,
+        currentInput: `${state.currentInput || ""}${value.digit}`,
       };
 
-    case ACTIONS.CLEAR:
+    case ACTION.CLEAR:
       return {};
 
-    case ACTIONS.DELETE:
+    case ACTION.DELETE:
       if (state.overwrite) {
         return {
           ...state,
@@ -89,14 +89,14 @@ const reducer = (state, { type, load }) => {
         currentInput: state.currentInput.slice(0, -1),
       };
 
-    case ACTIONS.CLICK_OPERAND:
+    case ACTION.CLICK_OPERAND:
       if (state.currentInput == null && state.previousInput == null)
         return state;
 
       if (state.previousInput == null) {
         return {
           ...state,
-          operand: load.operand,
+          operand: value.operand,
           previousInput: state.currentInput,
           currentInput: null,
         };
@@ -105,18 +105,18 @@ const reducer = (state, { type, load }) => {
       if (state.currentInput == null) {
         return {
           ...state,
-          operand: load.operand,
+          operand: value.operand,
         };
       }
 
       return {
         ...state,
         previousInput: evaluate(state),
-        operand: load.operand,
+        operand: value.operand,
         currentInput: null,
       };
 
-    case ACTIONS.EVALUATE:
+    case ACTION.EVALUATE:
       if (
         state.operand == null ||
         state.previousInput == null ||

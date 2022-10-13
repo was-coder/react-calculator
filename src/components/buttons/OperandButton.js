@@ -1,4 +1,4 @@
-import { ACTIONS } from "../../App";
+import { ACTION } from "../../App";
 
 // handling dispatch for operands
 
@@ -7,8 +7,8 @@ export default function OperandButton({ dispatch, operand }) {
     <button
       onClick={() =>
         dispatch({
-          type: ACTIONS.CLICK_OPERAND,
-          load: { operand },
+          type: ACTION.CLICK_OPERAND,
+          value: { operand },
         })
       }
       className="input-btn signs"

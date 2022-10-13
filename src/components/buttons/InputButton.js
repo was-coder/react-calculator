@@ -1,4 +1,4 @@
-import { ACTIONS } from "../../App";
+import { ACTION } from "../../App";
 
 // handling dispatch for digits
 
@@ -7,8 +7,8 @@ export default function InputButton({ dispatch, digit }) {
     <button
       onClick={() =>
         dispatch({
-          type: ACTIONS.CLICK_INPUT,
-          load: { digit },
+          type: ACTION.CLICK_INPUT,
+          value: { digit },
         })
       }
       className="input-btn"

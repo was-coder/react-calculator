@@ -1,4 +1,4 @@
-import { ACTIONS } from "../../App";
+import { ACTION } from "../../App";
 
 // handling dispatch for delete button
 
@@ -7,7 +7,7 @@ export default function DeleteButton({ dispatch, del }) {
     <button
       onClick={() =>
         dispatch({
-          type: ACTIONS.DELETE,
+          type: ACTION.DELETE,
         })
       }
       className="input-btn ac-del"

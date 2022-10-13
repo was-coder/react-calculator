@@ -1,4 +1,4 @@
-import { ACTIONS } from "../../App";
+import { ACTION } from "../../App";
 
 // handling dispatch for clear button
 
@@ -7,7 +7,7 @@ export default function ClearButton({ dispatch, clear }) {
     <button
       onClick={() =>
         dispatch({
-          type: ACTIONS.CLEAR,
+          type: ACTION.CLEAR,
         })
       }
       className="input-btn ac-del"
