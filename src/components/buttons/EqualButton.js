@@ -1,4 +1,4 @@
-import { ACTIONS } from "../App";
+import { ACTIONS } from "../../App";
 
 // handling dispatch for equal button
 
