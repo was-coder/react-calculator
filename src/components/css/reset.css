@@ -1,3 +1,13 @@
+:root {
+  --gray: gray;
+  --primary: #333232;
+  --resultColor: #d8d0d0;
+  --operandColor: #4682b4;
+  --inputColor: #d8bfd8;
+  --acDel: #6c7d47;
+  --equalColor: #006400;
+}
+
 *,
 *::before,
 *::after {
@@ -7,9 +17,15 @@
 }
 
 body {
-  background: gray;
+  background: var(--gray);
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.input-btn,
+.previous-result,
+.current-result {
+  font-weight: 700;
 }

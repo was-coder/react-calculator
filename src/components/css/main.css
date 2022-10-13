@@ -8,53 +8,50 @@
 
 .result {
   grid-column: 1 / -2;
-  background-color: #333232;
+  background-color: var(--primary);
   word-wrap: break-word;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-end;
   word-break: break-all;
-  color: rgb(216, 208, 208);
+  color: var(--resultColor);
   border-radius: 2px;
 }
 
 .operand {
-  color: #4682b4;
+  color: var(--operandColor);
   font-size: 20px;
 }
 
 .input-btn {
   font-size: 15px;
-  font-weight: 700;
   cursor: pointer;
   outline: none;
-  background-color: #d8bfd8;
+  background-color: var(--inputColor);
 }
 
 .signs {
-  background-color: #4682b4;
+  background-color: var(--operandColor);
 }
 
 .ac-del {
-  background-color: #6c7d47;
+  background-color: var(--acDel);
 }
 
 .previous-result {
   font-size: 16px;
-  font-weight: 700;
   padding-left: 10px;
 }
 
 .current-result {
   font-size: 20px;
-  font-weight: 700;
   padding-left: 10px;
 }
 
 .equal {
   grid-column: span 4;
-  background-color: darkgreen;
+  background-color: var(--equalColor);
   font-size: 30px;
 }
 
